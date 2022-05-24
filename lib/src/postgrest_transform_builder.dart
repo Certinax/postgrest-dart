@@ -49,6 +49,7 @@ class PostgrestTransformBuilder<T> extends PostgrestBuilder {
     bool nullsFirst = false,
     String? foreignTable,
   }) {
+    // order is updated
     final key = foreignTable == null ? 'order' : '$foreignTable.order';
     final existingOrder = url.queryParameters[key];
     final value = '${existingOrder == null ? '' : '$existingOrder,'}'
